@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notebook | TechStore</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos da página de detalhes */
+        .detalhe {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            padding-top: 65px;
+            padding-bottom: 65px;
+            min-height: 70vh;
+        }
+
+        .detalhe img {
+            width: 50%;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .detalhe-texto {
+            flex: 1;
+        }
+
+        .detalhe-texto h2 {
+            color: #172554;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .preco {
+            display: block;
+            color: #2563eb;
+            font-size: 25px;
+            margin: 18px 0;
+        }
+
+        @media (max-width: 650px) {
+            .detalhe {
+                flex-direction: column;
+            }
+
+            .detalhe img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topo">
+        <div class="container topo-conteudo">
+            <h1 class="logo">Tech<span>Store</span></h1>
+            <nav>
+                <a href="index.html">Início</a>
+                <a href="index.html#produtos">Produtos</a>
+                <a href="index.html#sobre">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container detalhe">
+        <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80" alt="Notebook aberto sobre uma mesa">
+        <div class="detalhe-texto">
+            <p class="destaque">PRODUTO EM DESTAQUE</p>
+            <h2>Notebook</h2>
+            <p>Um equipamento versátil para acompanhar sua rotina. Ideal para atividades da faculdade, trabalho, pesquisas na internet e entretenimento.</p>
+            <strong class="preco">R$ 3.499,00</strong>
+            <a href="index.html#produtos" class="botao">Voltar aos produtos</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 TechStore - Atividade acadêmica de HTML e CSS.</p>
+    </footer>
+</body>
+</html>

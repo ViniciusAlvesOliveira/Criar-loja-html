@@ -1,0 +1,278 @@
+/* Configurações gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background-color: #f5f6fa;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho: Flexbox */
+.topo {
+    background-color: #172554;
+    color: white;
+    padding: 18px 0;
+}
+
+.topo-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 26px;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+/* Banner: Flexbox */
+.banner {
+    background-color: #dbeafe;
+    padding: 55px 0;
+}
+
+.banner-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.banner-conteudo > div {
+    flex: 1;
+}
+
+.banner h2 {
+    color: #172554;
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+.destaque {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.banner-imagem img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.botao {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 11px 22px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.botao:hover {
+    background-color: #1d4ed8;
+}
+
+/* Produtos: CSS Grid */
+.produtos {
+    padding-top: 55px;
+    padding-bottom: 60px;
+}
+
+.titulo-secao {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.titulo-secao h2 {
+    color: #172554;
+    font-size: 30px;
+}
+
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: aparecer 0.7s ease both;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.card-conteudo {
+    padding: 18px;
+}
+
+.card h3 {
+    color: #172554;
+    margin-bottom: 7px;
+}
+
+.card p {
+    min-height: 50px;
+    color: #555;
+    font-size: 14px;
+}
+
+.card strong {
+    display: block;
+    color: #2563eb;
+    margin-top: 12px;
+    font-size: 18px;
+}
+
+.link-card {
+    display: inline-block;
+    margin-top: 12px;
+    color: #1d4ed8;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.link-card:hover {
+    text-decoration: underline;
+}
+
+/* Position: etiqueta posicionada sobre o primeiro card */
+.etiqueta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    padding: 5px 10px;
+    color: white;
+    background-color: #2563eb;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Seção sobre e rodapé */
+.sobre {
+    padding: 40px 0;
+    text-align: center;
+    background-color: #e5e7eb;
+}
+
+.sobre h2 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-color: #172554;
+    font-size: 14px;
+}
+
+/* Animação simples */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+    .grade-produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .banner h2 {
+        font-size: 30px;
+    }
+}
+
+/* Celular */
+@media (max-width: 550px) {
+    .topo-conteudo {
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    .banner-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner h2 {
+        font-size: 27px;
+    }
+
+    .banner-imagem img {
+        height: 200px;
+    }
+
+    .grade-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .card p {
+        min-height: auto;
+    }
+}
